@@ -1,0 +1,472 @@
+Program.Sub.ScreenSU.Start
+gui.SS_Form1..create
+gui.SS_Form1..caption("Workcenter Hours By Project")
+gui.SS_Form1..size(5020,3915)
+gui.SS_Form1..position(0,0)
+gui.SS_Form1..event(unload,unload)
+gui.SS_Form1..alwaysontop(False)
+gui.SS_Form1..fontname("Arial")
+gui.SS_Form1..fontsize(8)
+gui.SS_Form1..forecolor(0)
+gui.SS_Form1..fontstyle(,,,,)
+gui.SS_Form1..BackColor(-2147483633)
+gui.SS_Form1..controlbox(True)
+gui.SS_Form1..maxbutton(False)
+gui.SS_Form1..minbutton(False)
+gui.SS_Form1..mousepointer(0)
+gui.SS_Form1..moveable(True)
+gui.SS_Form1..sizeable(False)
+gui.SS_Form1..ShowInTaskBar(True)
+gui.SS_Form1..titlebar(True)
+gui.SS_Form1.lbl_txtProj.create(label,"Project",True,1800,200,1,100,135,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.txtProj.create(textbox,"",True,1800,330,0,100,335,True,0,Arial,8,16777215,1)
+gui.SS_Form1.cmd_txtProj.create(button)
+gui.SS_Form1.cmd_txtProj.caption("^")
+gui.SS_Form1.cmd_txtProj.visible(True)
+gui.SS_Form1.cmd_txtProj.size(330,330)
+gui.SS_Form1.cmd_txtProj.zorder(0)
+gui.SS_Form1.cmd_txtProj.position(1985,335)
+gui.SS_Form1.cmd_txtProj.enabled(True)
+gui.SS_Form1.cmd_txtProj.fontname("Arial")
+gui.SS_Form1.cmd_txtProj.fontsize(8)
+gui.SS_Form1.cmd_txtProj.event(click,cmd_txtproj_click)
+gui.SS_Form1.lbl_txtDescr.create(label,"Description",True,1800,200,1,2455,135,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.txtDescr.create(textbox,"",True,1800,330,0,2455,335,True,0,Arial,8,16777215,1)
+gui.SS_Form1.lbl_txtBegPhase.create(label,"Beginning Phase",True,1800,200,1,100,835,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.txtBegPhase.create(textbox,"",True,1800,330,0,100,1035,True,0,Arial,8,16777215,1)
+gui.SS_Form1.cmd_txtBegPhase.create(button)
+gui.SS_Form1.cmd_txtBegPhase.caption("^")
+gui.SS_Form1.cmd_txtBegPhase.visible(True)
+gui.SS_Form1.cmd_txtBegPhase.size(330,330)
+gui.SS_Form1.cmd_txtBegPhase.zorder(0)
+gui.SS_Form1.cmd_txtBegPhase.position(1985,1035)
+gui.SS_Form1.cmd_txtBegPhase.enabled(True)
+gui.SS_Form1.cmd_txtBegPhase.fontname("Arial")
+gui.SS_Form1.cmd_txtBegPhase.fontsize(8)
+gui.SS_Form1.cmd_txtBegPhase.event(click,cmd_txtbegphase_click)
+gui.SS_Form1.lbl_txtEndPhase.create(label,"Ending Phase",True,1800,200,1,2455,835,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.txtEndPhase.create(textbox,"",True,1800,330,0,2455,1035,True,0,Arial,8,16777215,1)
+gui.SS_Form1.cmd_txtEndPhase.create(button)
+gui.SS_Form1.cmd_txtEndPhase.caption("^")
+gui.SS_Form1.cmd_txtEndPhase.visible(True)
+gui.SS_Form1.cmd_txtEndPhase.size(330,330)
+gui.SS_Form1.cmd_txtEndPhase.zorder(0)
+gui.SS_Form1.cmd_txtEndPhase.position(4340,1035)
+gui.SS_Form1.cmd_txtEndPhase.enabled(True)
+gui.SS_Form1.cmd_txtEndPhase.fontname("Arial")
+gui.SS_Form1.cmd_txtEndPhase.fontsize(8)
+gui.SS_Form1.cmd_txtEndPhase.event(click,cmd_txtendphase_click)
+gui.SS_Form1.chkAllPhase.create(checkbox)
+gui.SS_Form1.chkAllPhase.caption("All Phases")
+gui.SS_Form1.chkAllPhase.visible(True)
+gui.SS_Form1.chkAllPhase.size(1800,300)
+gui.SS_Form1.chkAllPhase.zorder(0)
+gui.SS_Form1.chkAllPhase.position(100,1370)
+gui.SS_Form1.chkAllPhase.enabled(True)
+gui.SS_Form1.chkAllPhase.alignment(0)
+gui.SS_Form1.chkAllPhase.fontname("Arial")
+gui.SS_Form1.chkAllPhase.fontsize(8)
+gui.SS_Form1.lbl_dtpBegDte.create(label,"Beginning Date",True,1800,200,1,100,1920,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.dtpBegDte.create(datepicker)
+gui.SS_Form1.dtpBegDte.visible(True)
+gui.SS_Form1.dtpBegDte.size(1800,345)
+gui.SS_Form1.dtpBegDte.zorder(0)
+gui.SS_Form1.dtpBegDte.position(100,2120)
+gui.SS_Form1.dtpBegDte.enabled(True)
+gui.SS_Form1.dtpBegDte.checkbox(False)
+gui.SS_Form1.lbl_dtpEndDte.create(label,"Ending Date",True,1800,200,1,1985,1920,True,0,Arial,8,-2147483633,0)
+gui.SS_Form1.dtpEndDte.create(datepicker)
+gui.SS_Form1.dtpEndDte.visible(True)
+gui.SS_Form1.dtpEndDte.size(1800,345)
+gui.SS_Form1.dtpEndDte.zorder(0)
+gui.SS_Form1.dtpEndDte.position(1985,2120)
+gui.SS_Form1.dtpEndDte.enabled(True)
+gui.SS_Form1.dtpEndDte.checkbox(False)
+gui.SS_Form1.chkAllDte.create(checkbox)
+gui.SS_Form1.chkAllDte.caption("All Dates")
+gui.SS_Form1.chkAllDte.visible(True)
+gui.SS_Form1.chkAllDte.size(1800,300)
+gui.SS_Form1.chkAllDte.zorder(0)
+gui.SS_Form1.chkAllDte.position(100,2470)
+gui.SS_Form1.chkAllDte.enabled(True)
+gui.SS_Form1.chkAllDte.alignment(0)
+gui.SS_Form1.chkAllDte.fontname("Arial")
+gui.SS_Form1.chkAllDte.fontsize(8)
+gui.SS_Form1.cmdPrint.create(button)
+gui.SS_Form1.cmdPrint.caption("Print")
+gui.SS_Form1.cmdPrint.visible(True)
+gui.SS_Form1.cmdPrint.size(1000,360)
+gui.SS_Form1.cmdPrint.zorder(0)
+gui.SS_Form1.cmdPrint.position(100,2940)
+gui.SS_Form1.cmdPrint.enabled(True)
+gui.SS_Form1.cmdPrint.fontname("Arial")
+gui.SS_Form1.cmdPrint.fontsize(8)
+gui.SS_Form1.cmdPrint.event(click,cmdprint_click)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.JobHdr.Define("Job",String,Job)
+Variable.UDT.JobHdr.Define("Suffix",String,Suffix)
+Variable.UDT.JobHdr.Define("Project",String,Project)
+Variable.UDT.JobHdr.Define("Phase",String,Phase)
+Variable.uGlobal.uJobHdr.Declare("JobHdr")
+
+Variable.UDT.JobDtl.Define("Job",String,Job)
+Variable.UDT.JobDtl.Define("Suffix",String,Suffix)
+Variable.UDT.JobDtl.Define("Date_Sequence",Date,Date_Sequence,"YYMMDD")
+Variable.UDT.JobDtl.Define("Hours_Worked",Float,Hours_Worked)
+Variable.UDT.JobDtl.Define("Amt_Overhead",Float,Amt_Overhead)
+Variable.UDT.JobDtl.Define("Amount_Labor",Float,Amount_Labor)
+Variable.UDT.JobDtl.Define("Machine",String,Machine)
+Variable.uGlobal.uJobDtl.Declare("JobDtl")
+
+Variable.UDT.Mach.Define("Machine",String,Machine)
+Variable.UDT.Mach.Define("Hours_Worked",Float)
+Variable.UDT.Mach.Define("Amt_Overhead",Float)
+Variable.UDT.Mach.Define("Amount_Labor",Float)
+Variable.UDT.Mach.Define("Project",String)
+Variable.UDT.Mach.Define("Descr",String)
+Variable.UDT.Mach.Define("Trmnl",String)
+Variable.UDT.Mach.Define("Phase",String)
+Variable.uGlobal.uMach.Declare("Mach")
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.ODBC.Connection!Con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+Gui.SS_Form1..Show
+
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+
+F.ODBC.Connection!Con.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+program.sub.cmd_txtproj_click.start
+
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.CommonBrowser(2000,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.SS_Form1.txtProj.Text(V.Local.sRet(0))
+	Gui.SS_Form1.txtDescr.Text(V.Local.sRet(1))
+F.Intrinsic.Control.EndIf
+
+program.sub.cmd_txtproj_click.end
+
+program.sub.cmdprint_click.start
+
+' close screen
+Gui.SS_Form1..Visible(false)
+V.Local.sSel.Declare(String)
+V.Local.sParams.Declare(String)
+V.Local.sValues.Declare(String)
+V.Local.sFileLoc.Declare(String)
+V.Local.iRptId.Declare(Long)
+
+' delete existing records for calling terminal
+F.Intrinsic.String.Concat("delete from GCG_3852_WC_HrsByPrj where Trmnl='",V.Caller.Terminal,"'",V.Local.sSel)
+F.ODBC.Connection!Con.Execute(V.Local.sSel)
+
+F.Intrinsic.Control.CallSub(Jobdata)
+F.Intrinsic.Control.CallSub(Sumdata)
+F.Intrinsic.Control.CallSub(Savedata)
+
+F.Intrinsic.String.Split("Trmnl*!*BegDate*!*EndDate*!*AllDate","*!*",V.Local.sParams)
+F.Intrinsic.String.Concat(V.Caller.Terminal,"*!*",V.Screen.SS_Form1!dtpBegDte.Value,"*!*",V.Screen.SS_Form1!dtpEndDte.Value,"*!*",V.Screen.SS_Form1!chkAllDte.Value,V.Local.sValues)
+F.Intrinsic.String.Split(V.Local.sValues,"*!*",V.Local.sValues)
+
+F.Intrinsic.String.Concat(V.Caller.BusintDir,"\Custom\GCG_3852_WC_Hrs_By_Proj.rpt",V.Local.sFileLoc)
+F.Global.BI.InitializeReport("GCG_3852_WC_Hrs_By_Proj.rpt",V.Local.sFileLoc,V.Local.iRptId)
+F.Global.BI.PrintReport(V.Local.iRptId,0,V.Local.sParams,V.Local.sValues,"",False)
+
+F.Intrinsic.Control.CallSub(Unload)
+
+program.sub.cmdprint_click.end
+
+Program.Sub.JobData.Start
+F.Intrinsic.Control.SetErrorHandler("JobData_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSel.Declare(String)
+V.Local.iFor.Declare(Long)
+V.Local.sBegDate.Declare(String)
+V.Local.sEndDate.Declare(String)
+
+V.uGlobal.uJobHdr.Redim(-1,-1)
+' get all jobs with for the selected project
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chkAllPhase.Value,=,1)
+	F.Intrinsic.String.Concat("select Job, Suffix, Project, Phase from Job_Header where Project = '",V.Screen.SS_Form1!txtProj.Text,"'",V.Local.sSel)
+	F.ODBC.Connection!Con.OpenRecordsetRO("rstSel",V.Local.sSel)
+		F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uJobHdr",False,1)
+		F.Intrinsic.Control.EndIf
+	F.ODBC.Con!rstSel.Close
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Concat("select Job, Suffix, Project,Phase from Job_Header where Project = '",V.Screen.SS_Form1!txtProj.Text,"' and PHASE between '",V.Screen.SS_Form1!txtBegPhase.Text,"' and '",V.Screen.SS_Form1!txtEndPhase.Text,"'",V.Local.sSel)
+	F.ODBC.Connection!Con.OpenRecordsetRO("rstSel",V.Local.sSel)
+		F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uJobHdr",True,1)
+		F.Intrinsic.Control.EndIf
+	F.ODBC.Con!rstSel.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chkAllPhase.Value,=,1)
+	F.Intrinsic.String.Concat("select Job, Suffix, Project, Phase from Job_Hist_Mast where Project = '",V.Screen.SS_Form1!txtProj.Text,"' ",V.Local.sSel)
+	F.ODBC.Connection!Con.OpenRecordsetRO("rstSel",V.Local.sSel)
+		F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uJobHdr",True,1)
+		F.Intrinsic.Control.EndIf
+	F.ODBC.Con!rstSel.Close
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Concat("select Job, Suffix, Project,Phase from Job_Hist_Mast where Project = '",V.Screen.SS_Form1!txtProj.Text,"' and PHASE between '",V.Screen.SS_Form1!txtBegPhase.Text,"' and '",V.Screen.SS_Form1!txtEndPhase.Text,"'",V.Local.sSel)
+	F.ODBC.Connection!Con.OpenRecordsetRO("rstSel",V.Local.sSel)
+		F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uJobHdr",True,1)
+		F.Intrinsic.Control.EndIf
+	F.ODBC.Con!rstSel.Close
+F.Intrinsic.Control.EndIf
+
+' if no jobs found, exit sub
+F.Intrinsic.Control.If(V.uGlobal.uJobHdr!Job.UBound,=,-1)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Format(V.Screen.SS_Form1!dtpBegDte.Value,"YYMMDD",V.Local.sBegDate)
+F.Intrinsic.String.Format(V.Screen.SS_Form1!dtpEndDte.Value,"YYMMDD",V.Local.sEndDate)
+
+V.uGlobal.uJobDtl.Redim(-1,-1)
+' get job details for the date range entered
+F.Intrinsic.String.Concat("select Job, Suffix, Machine, Date_Sequence,Amount_Labor, Amt_Overhead, Hours_Worked from Job_Detail where LMO='L' and ",V.Screen.SS_Form1!chkAllDte.Value,"='1' or Date_Sequence between '",V.Local.sBegDate,"' and '",V.Local.sEndDate,"' ",V.Local.sSel)
+F.ODBC.Connection!Con.OpenRecordsetRO("rstSel",V.Local.sSel)
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uJobDtl",False,1)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+
+F.Intrinsic.String.Concat("select Job, Suffix, Machine, Date_Sequence,Amount_Labor, Amt_Overhead, Hours_Worked from Job_Hist_Dtl where LMO='L' and ",V.Screen.SS_Form1!chkAllDte.Value,"='1' or Date_Sequence between '",V.Local.sBegDate,"' and '",V.Local.sEndDate,"' ",V.Local.sSel)
+F.ODBC.Connection!Con.OpenRecordsetRO("rstSel",V.Local.sSel)
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uJobDtl",True,1)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+
+V.uGlobal.uMach.Redim(-1,-1)
+' need clean list of Machines
+F.ODBC.Connection!Con.OpenRecordsetRO("rstSel","select distinct Machine from Job_Detail where LMO='L' order by Machine")
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uMach",False,1)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+
+F.ODBC.Connection!Con.OpenRecordsetRO("rstSel","select distinct Machine from Job_Hist_Dtl where LMO='L' order by Machine")
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uMach",True,1)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+
+' flag/delete duplicate machine records
+F.Intrinsic.Variable.UDTMultiFlagDuplicates(V.uGlobal.uMach!Machine)
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uMach)
+
+
+' flag job detail records.  looking for detail for only those jobs for the selected project
+' also flagging header records because we'll need a clean list of jobs for the next step
+F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uJobDtl)
+F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uJobHdr)
+' unflag detail records for jobs found onthe job-header
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uJobHdr!Job.LBound,V.uGlobal.uJobHdr!Job.UBound,1)
+	F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uJobDtl!Job,V.uGlobal.uJobHdr(v.Local.iFor)!Job,V.uGlobal.uJobDtl!Suffix,V.uGlobal.uJobHdr(v.Local.iFor)!Suffix)
+	F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uJobHdr!Job,V.uGlobal.uJobHdr(v.Local.iFor)!Job,V.uGlobal.uJobHdr!Suffix,V.uGlobal.uJobHdr(v.Local.iFor)!Suffix)
+F.Intrinsic.Control.Next(V.Local.iFor)
+' delete all detail records still flagged
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uJobDtl)
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uJobHdr)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("JobData_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3852_WC_Hrs_By_Proj.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.JobData.End
+
+Program.Sub.SumData.Start
+
+' nothing to do if there are no detail records
+F.Intrinsic.Control.If(V.uGlobal.uJobDtl!Job.UBound,=,-1)
+	V.uGlobal.uMach.Redim(-1,-1)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.endif
+
+V.Local.iForMach.Declare(Long)
+V.Local.iForDtl.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sReta.Declare(String)
+V.Local.fHrs.Declare(Float)
+V.Local.fLab.Declare(Float)
+V.Local.fOvrhd.Declare(Float)
+
+
+' flag all machines.  Will unflag those with data.
+F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uMach)
+' get sum of Hours_Worked, Amt_Labor, Amt_Overhead for each machine
+F.Intrinsic.Control.For(V.Local.iForMach,V.uGlobal.uMach!Machine.LBound,V.uGlobal.uMach!Machine.UBound,1)
+	' look for all detail for the current machine
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uJobDtl!Machine,V.uGlobal.uMach(v.Local.iForMach)!Machine,V.Local.sRet)
+	' If detail is found for the current machine
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		' reset totals to 0
+		V.Local.fHrs.Set(0)
+		V.Local.fLab.Set(0)
+		V.Local.fOvrhd.Set(0)
+		' get totals by machine
+		F.Intrinsic.Control.For(V.Local.iForDtl,V.Local.sRet.LBound,V.Local.sRet.UBound,1)
+
+			F.Intrinsic.Math.Add(V.Local.fLab,V.uGlobal.uJobDtl(v.Local.sRet(v.Local.iForDtl))!Amount_Labor,V.Local.fLab)
+			F.Intrinsic.Math.Add(V.Local.fHrs,V.uGlobal.uJobDtl(v.Local.sRet(v.Local.iForDtl))!Hours_Worked,V.Local.fHrs)
+			F.Intrinsic.Math.Add(V.Local.fOvrhd,V.uGlobal.uJobDtl(v.Local.sRet(v.Local.iForDtl))!Amt_Overhead,V.Local.fOvrhd)
+		F.Intrinsic.Control.Next(V.Local.iForDtl)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uMach!Machine,V.uGlobal.uMach(v.Local.iForMach)!Machine,V.uGlobal.uMach!Amount_Labor,V.Local.fLab)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uMach!Machine,V.uGlobal.uMach(v.Local.iForMach)!Machine,V.uGlobal.uMach!Amt_Overhead,V.Local.fOvrhd)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uMach!Machine,V.uGlobal.uMach(v.Local.iForMach)!Machine,V.uGlobal.uMach!Hours_Worked,V.Local.fHrs)
+		F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uMach!Machine,V.uGlobal.uMach(v.Local.iForMach)!Machine)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iForMach)
+
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uMach)
+
+Program.Sub.SumData.End
+
+Program.Sub.SaveData.Start
+
+
+' nothing to do if there are no data exists
+F.Intrinsic.Control.If(V.uGlobal.uMach!Machine.UBound,=,-1)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.endif
+
+V.Local.sSel.Declare(String)
+
+' set default field values
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uMach!Project,V.Screen.SS_Form1!txtProj.Text)
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uMach!Descr,V.Screen.SS_Form1!txtDescr.Text)
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uMach!Trmnl,V.Caller.Terminal)
+' set field references
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uMach!Amount_Labor,"Amt_Labor")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uMach!Amt_Overhead,"Amt_Overhead")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uMach!Hours_Worked,"Hours_Worked")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uMach!Project,"Project")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uMach!Phase,"Phase")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uMach!Descr,"Descr")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uMach!Trmnl,"Trmnl")
+
+' save new records to table
+F.Intrinsic.String.Concat("select * from GCG_3852_WC_HrsByPrj where Trmnl='",V.Caller.Terminal,"' ",V.Local.sSel)
+F.ODBC.Connection!Con.OpenRecordsetRW("rstSel",V.Local.sSel)
+	F.Intrinsic.Variable.SaveUDTToRecordset("Con","rstSel","V.uGlobal.uMach")
+F.ODBC.Con!rstSel.Close
+
+Program.Sub.SaveData.End
+
+program.sub.cmd_txtbegphase_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtbegphase_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.String.Concat("Select PHASE, DESCR from V_PROJECT_PHASE where PROJECT = '",V.Screen.SS_Form1!txtProj.Text,"' Order by PHASE",V.Local.sSql)
+V.Local.sTitles.Set("Phase*!*Description")
+V.Local.sWidths.Set("2500*!*4700")
+
+F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Selet Phase","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,5000,8000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.SS_Form1.txtBegPhase.Text(V.Local.sRet.Trim)
+	Gui.SS_Form1.txtEndPhase.Text(V.Screen.SS_Form1!txtBegPhase.Text)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtbegphase_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3852_WC_Hrs_By_Proj.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_txtbegphase_click.end
+
+program.sub.cmd_txtendphase_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtendphase_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.String.Concat("Select PHASE, DESCR from V_PROJECT_PHASE where PROJECT = '",V.Screen.SS_Form1!txtProj.Text,"' Order by PHASE",V.Local.sSql)
+V.Local.sTitles.Set("Phase*!*Description")
+V.Local.sWidths.Set("2500*!*4700")
+
+F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Selet Phase","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,5000,8000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.SS_Form1.txtEndPhase.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtendphase_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3852_WC_Hrs_By_Proj.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_txtendphase_click.end
+
+Program.Sub.Comments.Start
+${$0$}$GCG_Wrkcntr_Hrs_By_Project$}$JCT$}$9/25/2012
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$For Byers Precision Fabricators
+Quote 3961
+Custom Hook/Menu Item
+Program.Sub.Comments.End
+Program.Sub.ScreenSS.Start
+SS_Form1{{CAPTION::Workcenter Hours By Project
+SS_Form1.CTRL{{NAME::txtProj\\TYPE::2\\CAPTION::Project\\GROUP::1\\BROWSER::1\\SIZE::1
+SS_Form1.CTRL{{NAME::txtDescr\\TYPE::2\\CAPTION::Description\\GROUP::1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtBegPhase\\TYPE::2\\CAPTION::Beginning Phase\\GROUP::2\\BROWSER::1\\SIZE::1
+SS_Form1.CTRL{{NAME::txtEndPhase\\TYPE::2\\CAPTION::Ending Phase\\GROUP::2\\BROWSER::1\\SIZE::1
+SS_Form1.CTRL{{NAME::chkAllPhase\\TYPE::9\\CAPTION::All Phases\\GROUP::-1\\SUBGROUP::1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::dtpBegDte\\TYPE::6\\CAPTION::Beginning Date\\GROUP::3\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::dtpEndDte\\TYPE::6\\CAPTION::Ending Date\\GROUP::3\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::chkAllDte\\TYPE::9\\CAPTION::All Dates\\GROUP::4\\SUBGROUP::1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::cmdPrint\\TYPE::5\\CAPTION::Print\\GROUP::5\\BROWSER::0\\SIZE::1
+
+Program.Sub.ScreenSS.End
+
